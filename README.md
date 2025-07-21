@@ -93,7 +93,7 @@ NavigationLink(value: item) {
 
 Apresente telas temporárias usando `.sheet`.
 
-📁 Arquivo: Exemplo 04.swift
+📁 Arquivo: `Exemplo 04.swift`
 
 ```swift
 .sheet(isPresented: $mostrarSheet) {
