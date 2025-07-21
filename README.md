@@ -54,3 +54,53 @@ NavigationStack {
         DetailView()
     }
 }
+```
+
+
+## 2. Navegação Programática
+
+Utilize `@State` e `navigationDestination(isPresented:)` para navegar com base em lógica.
+
+📁 Arquivo: `Exemplo 02.swift`
+
+```swift
+@State private var isActive = false
+
+Button("Ir para Detalhes") {
+    isActive = true
+}
+.navigationDestination(isPresented: $isActive) {
+    DetailView()
+}
+````
+
+## 3. Passando Dados entre Telas
+
+Envie modelos ou valores específicos entre telas com `NavigationLink(value:)` e `navigationDestination(for:)`.
+
+📁 Arquivo: `Exemplo 03.swift`
+
+```swift
+NavigationLink(value: item) {
+    Text(item.titulo)
+}
+.navigationDestination(for: Item.self) { item in
+    DetailsView(item: item)
+}
+```
+
+## 4. Navegação Modal (Sheets)
+
+Apresente telas temporárias usando `.sheet`.
+
+📁 Arquivo: Exemplo 04.swift
+
+```swift
+.sheet(isPresented: $mostrarSheet) {
+    ConfiguracoesView()
+}
+```
+
+## 5. Capturas de Tela
+
+
